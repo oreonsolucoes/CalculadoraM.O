@@ -1,0 +1,152 @@
+/* ── MODALS ── */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-backdrop.show { display: flex; }
+
+.modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  width: 100%;
+  animation: modalIn 250ms var(--ease) both;
+}
+.modal-sm { max-width: 400px; }
+.modal-lg { max-width: 800px; }
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-faint);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  flex-shrink: 0;
+}
+.modal-close {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms;
+}
+.modal-close:hover { color: var(--text); background: var(--bg-elevated); }
+
+.modal-body {
+  padding: 18px;
+  overflow-y: auto;
+  flex: 1;
+}
+.modal-footer {
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-faint);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.admin-error {
+  display: none;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: var(--red-dim);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: var(--r);
+  color: var(--red);
+  font-size: 12.5px;
+}
+.admin-error.show { display: block; }
+
+/* ── ADMIN SYS TABS ── */
+.admin-sys-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.admin-sys-tab {
+  padding: 5px 12px;
+  border-radius: var(--r);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  transition: all 150ms;
+}
+.admin-sys-tab:hover { color: var(--text); background: var(--bg-elevated); }
+.admin-sys-tab.active { color: var(--brand); background: var(--brand-dim); border-color: rgba(232,23,30,0.25); }
+
+/* ── ADMIN EDIT TABLE ── */
+.admin-edit-table { width: 100%; overflow-x: auto; border-radius: var(--r); border: 1px solid var(--border-faint); margin-bottom: 14px; }
+.admin-edit-table table { min-width: 580px; }
+.admin-edit-table th {
+  padding: 8px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--dim);
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-faint);
+  text-align: left;
+}
+.admin-edit-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--border-faint);
+  vertical-align: middle;
+}
+.admin-edit-table tr:last-child td { border-bottom: none; }
+.admin-edit-table input,
+.admin-edit-table select {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text);
+  padding: 5px 7px;
+  font-size: 12px;
+  width: 100%;
+  transition: border-color 120ms;
+}
+.admin-edit-table input:focus,
+.admin-edit-table select:focus { border-color: var(--brand); outline: none; }
+.admin-edit-table .col-nome   { min-width: 180px; }
+.admin-edit-table .col-unid   { width: 100px; }
+.admin-edit-table .col-valor  { width: 90px; }
+.admin-edit-table .col-tempo  { width: 90px; }
+.admin-edit-table .col-del    { width: 40px; text-align: center; }
+
+/* ── ADMIN ADD ROW ── */
+.admin-add-row {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+}
+.admin-add-row .field { flex: 1; min-width: 120px; }
+.admin-add-row .btn { flex-shrink: 0; align-self: flex-end; }

@@ -1,0 +1,99 @@
+/* ── TABELA DE REFERÊNCIA — visual limpo ── */
+
+.ref-section { margin-bottom: 24px; }
+
+.ref-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  margin-bottom: 8px;
+  padding: 0 2px;
+}
+.ref-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-faint);
+}
+
+.ref-table-wrap {
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-faint);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.ref-table {
+  min-width: 500px;
+  background: var(--bg-card);
+}
+
+/* Fixed column widths to prevent squishing */
+.ref-table col.col-produto { width: auto; min-width: 200px; }
+.ref-table col.col-unid    { width: 90px; }
+.ref-table col.col-valor   { width: 130px; }
+.ref-table col.col-tempo   { width: 120px; }
+.ref-table col.col-horas   { width: 110px; }
+
+.ref-table thead tr { background: var(--bg-elevated); }
+.ref-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.ref-table th.th-r { text-align: right; }
+
+.ref-table tbody tr { transition: background 100ms; }
+.ref-table tbody tr:hover { background: var(--bg-elevated); }
+
+.ref-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border-faint);
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+.ref-table td.td-produto {
+  max-width: none;
+  white-space: normal;
+  word-break: break-word;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.ref-table tr:last-child td { border-bottom: none; }
+
+.ref-table .td-r {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.ref-table .td-unid  { color: var(--muted); font-size: 11.5px; }
+.ref-table .td-valor { color: var(--accent); }
+.ref-table .td-tempo { color: var(--amber); }
+.ref-table .td-horas { color: var(--green); }
+.ref-table .td-zero  { color: var(--dim); }
+
+.ref-table tfoot tr { background: var(--bg-elevated); }
+.ref-table tfoot td {
+  font-weight: 700;
+  font-size: 12.5px;
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  color: var(--muted);
+}
+.ref-table tfoot .td-valor { color: var(--brand); }
+.ref-table tfoot .td-tempo { color: var(--amber); }

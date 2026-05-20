@@ -1,0 +1,9 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit;font-size:inherit}
+input,select,textarea{font-family:inherit;font-size:inherit;border:none;outline:none}
+img,svg{display:block;max-width:100%}
+table{border-collapse:collapse;width:100%}
+ul,ol{list-style:none}
