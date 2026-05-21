@@ -169,7 +169,8 @@ const Calculator = (() => {
       });
       result[sysKey] = { cost, time, label: data.sistemas[sysKey].label };
     });
-    result._total_cost = Object.values(result).reduce((s,v) => s + (v.cost||0), 0);
+    const _subtotal = Object.values(result).reduce((s,v) => s + (v.cost||0), 0);
+    result._total_cost = _subtotal * 1.0115;
     result._total_time = Object.values(result).reduce((s,v) => s + (v.time||0), 0);
     return result;
   }
