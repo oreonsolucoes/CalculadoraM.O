@@ -17,6 +17,7 @@ const Calculator = (() => {
 
   function reload() {
     data = State.getData();
+    qty  = State.getQty();       
     const container = document.getElementById('sysContents');
     container.innerHTML = '';
     renderAllSystems();
